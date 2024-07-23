@@ -5,10 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node"
+    "dev": "node 5-main.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {}
+  "license": "ISC"
 }
+
