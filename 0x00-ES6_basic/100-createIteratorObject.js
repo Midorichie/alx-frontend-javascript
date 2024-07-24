@@ -1,12 +1,14 @@
 export default function createIteratorObject(report) {
-  const employeesArrays = Object.values(report);
+  const allEmployees = report.allEmployees;
+  const employeesArray = [];
 
-  const allEmployees = employeesArrays.flat();
-
-  return (function* () {
-    for (const employee of allEmployees) {
-      yield employee;
+  // Collect all employees into a single array
+  for (const department in allEmployees) {
+    if (Object.hasOwnProperty.call(allEmployees, department)) {
+      employeesArray.push(...allEmployees[department]);
     }
-  })();
-}
+  }
 
+  // Return an iterator for the array of employees
+  return employeesArray[Symbol.iterator]();
+}
