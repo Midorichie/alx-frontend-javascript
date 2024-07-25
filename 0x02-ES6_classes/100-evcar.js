@@ -13,13 +13,6 @@ export default class EVCar extends Car {
   }
 
   cloneCar() {
-    // Create a new Car instance with the current attributes
-    // Set the attributes explicitly to undefined for the Car instance
-    const clonedCar = new Car();
-    clonedCar._brand = undefined;
-    clonedCar._motor = undefined;
-    clonedCar._color = undefined;
-    return clonedCar;
+    return new Car(this[Symbol.for('brand')], this[Symbol.for('motor')], this[Symbol.for('color')]);
   }
 }
-
