@@ -22,7 +22,6 @@ export default class Car {
   }
 
   cloneCar() {
-    // Create a new Car instance with the current attributes
-    return new Car();
+    return new this.constructor(this[_brand], this[_motor], this[_color]);
   }
 }
